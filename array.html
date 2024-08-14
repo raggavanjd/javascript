@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // Arrays, Array methods (push, pop, shift, unshift)
+        // Task 1: Initialize an array of your favorite fruits. Add “Mango” to the end of the array using push().
+        const fruits = ["Apple", "Banana", "Cherry"];
+        fruits.push("Mango");
+        console.log(fruits);
+
+        // Task 2: Remove the last fruit from the array using pop().
+        fruits.pop();
+        console.log(fruits);
+
+        // Task 3: Add “Strawberry” to the beginning of the fruits array using unshift().
+        fruits.unshift("Strawberry");
+        console.log(fruits);
+
+        // Task 4: Remove the first fruit from the array using shift().
+        fruits.shift();
+        console.log(fruits);
+
+        // Task 5: Create a function that accepts an array of numbers and uses push() to add the number 7 to it.
+        function addSeven(arr) {
+            arr.push(7);
+            return arr;
+        }
+        console.log(addSeven([1, 2, 3]));
+
+        // Task 6: Write a function that accepts a string. Convert the string to an array of words and remove the last word using pop().
+        function removeLastWord(str) {
+            const words = str.split(" ");
+            words.pop();
+            return words.join(" ");
+        }
+        console.log(removeLastWord("This is a test string"));
+
+        // Task 7: Create an array of days of the week. Using shift() and unshift(), move Sunday to the end of the array.
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const sunday = days.shift();
+        days.push(sunday);
+        console.log(days);
+
+        // Task 8: Given an array of letters, write a function that adds a letter ‘Z’ at the beginning and end of the array.
+        function addZ(arr) {
+            arr.unshift("Z");
+            arr.push("Z");
+            return arr;
+        }
+        console.log(addZ(["A", "B", "C"]));
+
+        // Task 9: Initialize an array with five movie names. Ask the user for another movie name and add it to the end of the array.
+        const movies = ["Inception", "The Matrix", "Interstellar", "The Godfather", "Pulp Fiction"];
+        const newMovie = prompt("Enter a movie name:");
+        movies.push(newMovie);
+        console.log(movies);
+
+        // Task 10: Remove the third item from the movie array.
+        movies.splice(2, 1);
+        console.log(movies);
+
+   // Task 1: Create an array of numbers. Use map() to create a new array with each number squared.
+    const numbers = [1, 2, 3, 4, 5];
+    const squaredNumbers = numbers.map(x => x * x);
+    console.log("Task 1: Squared Numbers:", squaredNumbers);
+
+    // Task 2: Use filter() on an array of numbers to get a new array with only even numbers.
+    const numbers2 = [1, 2, 3, 4, 5, 6];
+    const evenNumbers = numbers2.filter(x => x % 2 === 0);
+    console.log("Task 2: Even Numbers:", evenNumbers);
+
+    // Task 3: Create an array of product prices. Use reduce() to find the total price.
+    const prices = [10.99, 5.99, 7.99, 3.99];
+    const totalPrice = prices.reduce((acc, current) => acc + current, 0);
+    console.log("Task 3: Total Price:", totalPrice);
+
+    // Task 4: For an array of strings, use map() to create a new array that contains the length of each string.
+    const strings = ["hello", "world", "javascript"];
+    const stringLengths = strings.map(x => x.length);
+    console.log("Task 4: String Lengths:", stringLengths);
+
+    // Task 5: Use splice() to remove the third item of an array and replace it with the string “replaced!”.
+    const arr = [1, 2, 3, 4, 5];
+    arr.splice(2, 1, "replaced!");
+    console.log("Task 5: Spliced Array:", arr);
+
+    // Task 6: For an array of integers, use slice() to get a new array containing the 2nd, 3rd, and 4th elements.
+    const arr2 = [1, 2, 3, 4, 5];
+    const slicedArr = arr2.slice(1, 4);
+    console.log("Task 6: Sliced Array:", slicedArr);
+
+    // Task 7: Create an array of names. Use filter() to produce a new array that contains names starting with the letter ‘A’.
+    const names = ["Alice", "Bob", "Adam", "Charlie", "Alex"];
+    const namesStartingWithA = names.filter(x => x.startsWith("A"));
+    console.log("Task 7: Names Starting with A:", namesStartingWithA);
+
+    // Task 8: For an array of scores (out of 100), use map() to grade each score (e.g., 90-100 = ‘A’, 80-89 = ‘B’).
+    const scores = [85, 92, 78, 95, 88];
+    const grades = scores.map(x => {
+      if (x >= 90) return "A";
+      else if (x >= 80) return "B";
+      else return "C";
+    });
+    console.log("Task 8: Grades:", grades);
+
+    // Task 9: Given an array of ages, use reduce() to find the average age.
+    const ages = [25, 30, 35, 20, 28];
+    const sum = ages.reduce((acc, current) => acc + current, 0);
+    const averageAge = sum / ages.length;
+    console.log("Task 9: Average Age:", averageAge);
+
+    // Task 10: Use splice() to insert two new fruits after the second fruit in an array of fruits.
+    let fruit = ["apple", "banana", "orange", "grape"];
+    fruits.splice(2, 0, "mango", "pineapple");
+    console.log("Task 10: Fruits Array:", fruits);
+    </script>
+    
+</body>
+</html>

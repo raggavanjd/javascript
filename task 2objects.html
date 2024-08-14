@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+    <script>
+        // Task 1: Create an object named book with properties: title, author, and yearPublished.
+        const book = {
+            title: "the jungle book",
+            author: "R kipling",
+            yearPublished: 1995,
+            getSummary: function() {
+                return `${this.title} by ${this.author}, published in ${this.yearPublished}.`;
+            }
+        };
+        console.log(book.getSummary());
+
+        // Task 2: Add a method named age that calculates how old the book is.
+        book.age = function() {
+            const currentYear = new Date().getFullYear();
+            return currentYear - this.yearPublished;
+        };
+        console.log(`The book is ${book.age()} years old.`);
+
+        // Task 3: Create an object calculator with methods add(), subtract(), multiply(), and divide().
+        const calculator = {
+            history: [],
+            add: function(a, b) {
+                const result = a + b;
+                this.history.push(`Added ${a} + ${b} = ${result}`);
+                return result;
+            },
+            subtract: function(a, b) {
+                const result = a - b;
+                this.history.push(`Subtracted ${a} - ${b} = ${result}`);
+                return result;
+            },
+            multiply: function(a, b) {
+                const result = a * b;
+                this.history.push(`Multiplied ${a} * ${b} = ${result}`);
+                return result;
+            },
+            divide: function(a, b) {
+                if (b !== 0) {
+                    const result = a / b;
+                    this.history.push(`Divided ${a} / ${b} = ${result}`);
+                    return result;
+                } else {
+                    this.history.push(`Attempted to divide by zero.`);
+                    return "Cannot divide by zero.";
+                }
+            }
+        };
+        console.log(calculator.add(5, 3));
+        console.log(calculator.subtract(10, 4));
+        console.log(calculator.multiply(6, 7));
+        console.log(calculator.divide(8, 2));
+        console.log(calculator.history);
+
+        // Task 4: Extend the calculator object to include a history array.
+        // (Already included in Task 3)
+
+        // Task 5: Create an object representing a person. Add methods to increase and decrease their age property.
+        const person = {
+            name: "John",
+            age: 25,
+            increaseAge: function() {
+                this.age++;
+            },
+            decreaseAge: function() {
+                if (this.age > 0) {
+                    this.age--;
+                }
+            },
+            greet: function() {
+                return `Hello, my name is ${this.name}.`;
+            }
+        };
+        person.increaseAge();
+        person.decreaseAge();
+        console.log(person.age);
+        console.log(person.greet());
+
+        // Task 6: For the person object, add a method named greet that uses the this keyword.
+        // (Already included in Task 5)
+
+        // Task 7: Design a circle object with properties radius and a method to calculate its area using this.radius.
+        const circle = {
+            radius: 5,
+            calculateArea: function() {
+                return Math.PI * Math.pow(this.radius, 2);
+            },
+            calculateDiameter: function() {
+                return this.radius * 2;
+            },
+            calculateCircumference: function() {
+                return 2 * Math.PI * this.radius;
+            }
+        };
+        console.log(`Area: ${circle.calculateArea()}`);
+        console.log(`Diameter: ${circle.calculateDiameter()}`);
+        console.log(`Circumference: ${circle.calculateCircumference()}`);
+
+        // Task 8: Extend the circle object with methods to calculate its diameter and circumference.
+        // (Already included in Task 7)
+
+        // Task 9: Create an object account with properties: name, balance and methods: deposit, withdraw.
+        const account = {
+            name: "Jane",
+            balance: 1000,
+            deposit: function(amount) {
+                this.balance += amount;
+                return this.balance;
+            },
+            withdraw: function(amount) {
+                if (this.balance - amount >= 0) {
+                    this.balance -= amount;
+                    return this.balance;
+                } else {
+                    return "Insufficient balance.";
+                }
+            }
+        };
+        console.log(account.deposit(200));
+        console.log(account.withdraw(500));
+        console.log(account.withdraw(800));
+
+        // Task 10: Ensure that the balance can’t go negative using the this keyword.
+        // (Already included in Task 9)
+        </script>
+            
+        </body>
+        </html>
